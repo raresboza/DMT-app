@@ -14,7 +14,7 @@ struct UserRegister: Codable{
     let parola: String
     let telefon: String
     let tipUser: String
-    
+    //
     private enum CodingKeys: String, CodingKey{
         case nume
         case prenume
