@@ -111,15 +111,15 @@
 		5A2ADD5C204BF2BF00602D83 /* DMT */ = {
 			isa = PBXGroup;
 			children = (
+				5A2ADD5F204BF2BF00602D83 /* LoginViewController.swift */,
+				42FC30042094940700037E08 /* RegisterViewController.swift */,
 				5A5CEF7A208F93330098B4E3 /* AlertManager.swift */,
 				5A5CEF78208F93290098B4E3 /* ServerRequestManager.swift */,
 				5A5CEF76208F92CD0098B4E3 /* ServerRequestHelper.swift */,
-				5A2ADD5D204BF2BF00602D83 /* AppDelegate.swift */,
-				5A2ADD5F204BF2BF00602D83 /* LoginViewController.swift */,
-				42FC30042094940700037E08 /* RegisterViewController.swift */,
 				5A2ADD8D204BFBCE00602D83 /* Constants.swift */,
 				42FC3002209491DB00037E08 /* UserRegister.swift */,
 				5A2ADD8B204BF87200602D83 /* UIView w: Extension.swift */,
+				5A2ADD5D204BF2BF00602D83 /* AppDelegate.swift */,
 				5A2ADD61204BF2BF00602D83 /* Main.storyboard */,
 				5A2ADD64204BF2BF00602D83 /* Assets.xcassets */,
 				5A2ADD66204BF2BF00602D83 /* LaunchScreen.storyboard */,

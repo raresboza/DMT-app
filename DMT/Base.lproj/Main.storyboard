@@ -88,7 +88,7 @@
                                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                 </state>
                                                                                 <connections>
-                                                                                    <segue destination="ccg-WS-aYh" kind="presentation" id="skQ-bE-tkp"/>
+                                                                                    <segue destination="ccg-WS-aYh" kind="presentation" id="7ss-UV-fMs"/>
                                                                                 </connections>
                                                                             </button>
                                                                         </subviews>
@@ -248,7 +248,7 @@
         <!--SignUpViewController-->
         <scene sceneID="ma3-Fh-KFG">
             <objects>
-                <viewController id="ccg-WS-aYh" userLabel="SignUpViewController" sceneMemberID="viewController">
+                <viewController id="ccg-WS-aYh" userLabel="SignUpViewController" customClass="RegisterViewController" customModule="DMT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ayZ-Fe-0Um">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -370,6 +370,9 @@
                                                                 <state key="normal" title="Sign up" backgroundImage="Rectangle">
                                                                     <color key="titleColor" red="1" green="0.97236359520000004" blue="0.9553103329" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="registerButton:" destination="ccg-WS-aYh" eventType="touchUpInside" id="6f1-mJ-WHo"/>
+                                                                </connections>
                                                             </button>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="lGt-E7-rVh">
                                                                 <rect key="frame" x="103.33333333333331" y="311" width="190" height="28"/>
@@ -512,10 +515,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CRS-xr-XxC"/>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="xau-6a-ehW" id="PoW-bi-8cp"/>
+                        <outlet property="nameField" destination="Cav-Sf-j3t" id="ENJ-TI-SH5"/>
+                        <outlet property="passwordField" destination="nHC-U9-GwL" id="bzn-mo-w8z"/>
+                        <outlet property="phoneField" destination="xuu-Jb-C6a" id="BoD-a6-BvF"/>
+                        <outlet property="userScrollView" destination="CdE-hc-qD9" id="qJM-NS-of3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDo-vc-vCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034.7826086956522" y="36.684782608695656"/>
+            <point key="canvasLocation" x="1139" y="-22"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iXw-a3-SSS">
@@ -530,7 +540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T1O-PF-XwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="573" y="851"/>
+            <point key="canvasLocation" x="897" y="770"/>
         </scene>
     </scenes>
     <resources>

@@ -114,6 +114,17 @@ class ServerRequestManager: NSObject {
                         print("response in string este:'\(String(describing: stringResponse))'")
                     postCompleted(stringResponse!, msgValue, parseJSON)
                     }
+                    if (params["request"]?.isEqual(ServerRequestConstants.JSON.REGISTER_REQUEST_NUMBER))!{
+                        guard let msgValue = json?.value(forKey: ServerRequestConstants.JSON.TAG_MESSAGE) as! String? else{
+                            return
+                        }
+                        guard let responseValue = json?.value(forKey: ServerRequestConstants.JSON.TAG_RESPONSE) as! String? else{
+                            return
+                        }
+                       print ("msg value este: '\(msgValue)'")
+                         print ("response value este: '\(responseValue)'")
+                        postCompleted(responseValue, msgValue, parseJSON)
+                    }
                     
                 }
                 else {
