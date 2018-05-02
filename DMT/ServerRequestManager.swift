@@ -47,7 +47,7 @@ class ServerRequestManager: NSObject {
     func postRequest(params : Dictionary<NSString, NSString>,  url : String, postCompleted: @escaping (_ response: String, _ msg: String, _ json: NSDictionary?) -> ()) {
        
         let paramsStr = createStringFromDictionary(dict: params)
-        let paramsLength = "\(paramsStr.characters.count)"
+        let paramsLength = "\(paramsStr.count)"
         let requestBodyData = (paramsStr as NSString).data(using: String.Encoding.utf8.rawValue)
         print(url)
         let request = NSMutableURLRequest(url: NSURL(string: url)! as URL)

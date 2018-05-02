@@ -27,7 +27,7 @@ class ServerRequestHelper:NSObject {
     func isEmail(_ currentString:String) -> Bool {
         do {
             let regex = try NSRegularExpression(pattern: "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]+$", options: NSRegularExpression.Options.caseInsensitive)
-            return regex.firstMatch(in: currentString, options: [], range: NSMakeRange(0, currentString.characters.count)) != nil
+            return regex.firstMatch(in: currentString, options: [], range: NSMakeRange(0, currentString.count)) != nil
         } catch { return false }
     }
 

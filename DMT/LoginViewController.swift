@@ -17,7 +17,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
         view.addGestureRecognizer(tapGesture)
         emailField.delegate = self
@@ -61,7 +61,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 return
         }
-        let contentInset = UIEdgeInsets(top:0, left: 0, bottom: frame.height + 10, right:0)
+        let contentInset = UIEdgeInsets(top:0, left: 0, bottom: frame.height + 20, right:0)
         userScrollView.contentInset = contentInset
         userScrollView.scrollIndicatorInsets = contentInset
     }
@@ -80,7 +80,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             resultLabel.textColor = UIColor.white
             return
         }
-        if (emailField.text?.characters.contains("@"))! && emailField.text?.characters.contains(".") == false{
+        if (emailField.text?.characters.contains("@"))! && emailField.text?.contains(".") == false{
             resultLabel.text = ServerRequestConstants.resultErrors.invalidEmail
             resultLabel.textColor = UIColor.white
             return

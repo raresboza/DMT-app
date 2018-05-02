@@ -8,21 +8,26 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController, UITextFieldDelegate {
+class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var userScrollView: UIScrollView!
-    @IBOutlet weak var emailField: UITextField!
+
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var phoneField: UITextField!
     
+    @IBOutlet weak var profileImageView: UIImageView!
+    let imagePicker = UIImagePickerController()
     override func viewDidLoad() {
         super.viewDidLoad()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
+        let tapImage = UITapGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
         view.addGestureRecognizer(tapGesture)
      emailField.delegate = self
      passwordField.delegate = self
      nameField.delegate = self
      phoneField.delegate = self
+     imagePicker.delegate = self
      
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +62,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     func KeyboardWillShow(_ notification: Notification) {
+        print("text field = \(notification.userInfo)")
         guard let userInfo = notification.userInfo,
             let frame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
                 
@@ -75,7 +81,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-
+//    func imageWasTapped(sender: imagewas)
     @IBAction func registerButton(_ sender: Any) {
         var params = Dictionary<String, String>();
         params["nume"] = "Rimon"
