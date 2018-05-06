@@ -10,6 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+
     @IBOutlet weak var userScrollView: UIScrollView!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var emailField: UITextField!
@@ -17,7 +18,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
         view.addGestureRecognizer(tapGesture)
         emailField.delegate = self
@@ -74,15 +74,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
     @IBAction func loginButton(_ sender: UIButton) {
         if (emailField.text?.isEmpty)! || passwordField.text?.isEmpty == true{
-            resultLabel.text = ServerRequestConstants.resultErrors.emptyText
-            resultLabel.textColor = UIColor.white
+//            resultLabel.text = ServerRequestConstants.resultErrors.emptyText
+//            resultLabel.textColor = UIColor.white
+            self.view.makeToast(ServerRequestConstants.resultErrors.emptyText, duration: 3.0, position:.bottom, title: "Error") { didTap in
+                if didTap {
+                    print("completion from tap")
+                } else {
+                    print("completion without tap")
+                }
+            }
             return
         }
-        if (emailField.text?.characters.contains("@"))! && emailField.text?.contains(".") == false{
-            resultLabel.text = ServerRequestConstants.resultErrors.invalidEmail
-            resultLabel.textColor = UIColor.white
+        if (emailField.text?.contains("@"))! == false && emailField.text?.contains(".") == false{
+//            resultLabel.text = ServerRequestConstants.resultErrors.invalidEmail
+//            resultLabel.textColor = UIColor.white
+            self.view.makeToast(ServerRequestConstants.resultErrors.invalidEmail, duration: 3.0, position:.bottom, title: "Error") { didTap in
+                if didTap {
+                    print("completion from tap")
+                } else {
+                    print("completion without tap")
+                }
+            }
             return
         }
         resultLabel.text = ""
@@ -98,8 +113,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                         if(msg == ServerRequestConstants.JSON.RESPONSE_ERROR) {
                                             DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
                                                 DispatchQueue.main.async {
-        
-                                                    AlertManager.showGenericDialog(msg, viewController: self)
+                                                    self.view.makeToast(response, duration: 3.0, position:.bottom, title: "Error") { didTap in
+                                                        if didTap {
+                                                            print("completion from tap")
+                                                        } else {
+                                                            print("completion without tap")
+                                                        }
+                                                    }
+                                                   
                                                 }
                                             }
                                         } else if(msg == ServerRequestConstants.JSON.RESPONSE_SUCCESS) {
@@ -115,7 +136,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                             }
                                         }
                                     } else {
-                                        AlertManager.showGenericDialog("response from server undefined!!!", viewController: self)
+                                        AlertManager.showGenericDialog(ServerRequestConstants.resultErrors.unknownError, viewController: self)
                         
                                     }
         

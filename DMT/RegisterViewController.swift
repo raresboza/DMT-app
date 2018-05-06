@@ -21,7 +21,6 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
     override func viewDidLoad() {
         super.viewDidLoad()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
-        let tapImage = UITapGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
         view.addGestureRecognizer(tapGesture)
      emailField.delegate = self
      passwordField.delegate = self
@@ -62,7 +61,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
     }
     
     func KeyboardWillShow(_ notification: Notification) {
-        print("text field = \(notification.userInfo)")
+        print("text field = \(String(describing: notification.userInfo))")
         guard let userInfo = notification.userInfo,
             let frame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
                 
@@ -81,24 +80,68 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
         textField.resignFirstResponder()
         return true
     }
-//    func imageWasTapped(sender: imagewas)
+    
     @IBAction func registerButton(_ sender: Any) {
+        if (emailField.text?.isEmpty)! == true || passwordField.text?.isEmpty == true || nameField.text?.isEmpty == true || phoneField.text?.isEmpty == true {
+            //            resultLabel.text = ServerRequestConstants.resultErrors.emptyText
+            //            resultLabel.textColor = UIColor.white
+            self.view.makeToast(ServerRequestConstants.resultErrors.emptyText, duration: 3.0, position:.bottom, title: "Error") { didTap in
+                if didTap {
+                    print("completion from tap")
+                } else {
+                    print("completion without tap")
+                }
+            }
+            return
+        }
+        if (emailField.text?.contains("@"))! == false && emailField.text?.contains(".") == false{
+            //            resultLabel.text = ServerRequestConstants.resultErrors.invalidEmail
+            //            resultLabel.textColor = UIColor.white
+            self.view.makeToast(ServerRequestConstants.resultErrors.invalidEmail, duration: 3.0, position:.bottom, title: "Error") { didTap in
+                if didTap {
+                    print("completion from tap")
+                } else {
+                    print("completion without tap")
+                }
+            }
+            return
+        }
+        if phoneField.text?.isNumeric == false {
+            self.view.makeToast(ServerRequestConstants.resultErrors.invalidPhoneNumber, duration: 3.0, position:.bottom, title: "Error") { didTap in
+                if didTap {
+                    print("completion from tap")
+                } else {
+                    print("completion without tap")
+                }
+            }
+            return
+        }
+        let phoneNumber = phoneField.text
+        let email = emailField.text
+        let password = passwordField.text
+        let fullName = nameField.text
         var params = Dictionary<String, String>();
-        params["nume"] = "Rimon"
-        params["prenume"] = "Elex"
+        params["nume"] = fullName
+        params["prenume"] = "----"
         params["tip"] = "1"
-        params["mail"] = "rimonelex@babes.com"
-        params["parola"] = "flexpecaputau1"
-        params["telefon"] = "0722891448"
+        params["mail"] = email
+        params["parola"] = password
+        params["telefon"] = phoneNumber
         params["request"] = ServerRequestConstants.JSON.REGISTER_REQUEST_NUMBER
         
         ServerRequestManager.instance.postRequest(params: params as Dictionary<NSString, NSString>, url: ServerRequestConstants.URLS.REGISTER_URL, postCompleted: { (response, msg, json) -> () in
             if  response != ""  {
                 if(msg == ServerRequestConstants.JSON.RESPONSE_ERROR) {
                     DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
-                        DispatchQueue.main.async {
-                            
-                            AlertManager.showGenericDialog(msg, viewController: self)
+                        DispatchQueue.main.async {	
+                            self.view.makeToast(ServerRequestConstants.resultErrors.invalidEmail, duration: 3.0, position:.bottom, title: "Error") { didTap in
+                                if didTap {
+                                    print("completion from tap")
+                                } else {
+                                    print("completion without tap")
+                                }
+                            }
+                            return
                         }
                     }
                 } else if(msg == ServerRequestConstants.JSON.RESPONSE_SUCCESS) {
@@ -107,7 +150,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
                             
                             print("JSON = \(json!)")
                             
-                            AlertManager.showGenericDialog("Succes!", viewController: self)
+                            AlertManager.showGenericDialog(ServerRequestConstants.resultErrors.confirmEmail, viewController: self)
                             
                             
                             
@@ -115,7 +158,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
                     }
                 }
             } else {
-                AlertManager.showGenericDialog("response from server undefined!!!", viewController: self)
+                AlertManager.showGenericDialog(ServerRequestConstants.resultErrors.unknownError, viewController: self)
                 
             }
             
@@ -123,5 +166,12 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
         })
         
         
+    }
+}
+extension String {
+    var isNumeric: Bool {
+        guard self.count > 0 else { return false }
+        let nums: Set<Character> = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+        return Set(self).isSubset(of: nums)
     }
 }

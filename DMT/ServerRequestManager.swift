@@ -20,8 +20,11 @@ enum ServerRequestConstants {
     
     
     enum resultErrors{
-        static let invalidEmail = "Adresa de E-Mail tastata nu este valida"
-        static let emptyText = "Unul sau mai multe campuri sunt incomplete"
+        static let invalidEmail = "Adresa de E-Mail tastata nu este valida!"
+        static let emptyText = "Unul sau mai multe campuri sunt incomplete!"
+        static let invalidPhoneNumber = "Numarul de telefon tastat nu este valid!"
+        static let unknownError = "O eroare necunoscuta a avut loc."
+        static let confirmEmail = "Inregistrare reusita! Va rugam sa confirmati activarea acestui cont prin verificarea adresei de email tastate."
     }
    
     

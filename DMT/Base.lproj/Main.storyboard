@@ -77,12 +77,12 @@
                                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mail" translatesAutoresizingMaskIntoConstraints="NO" id="2RQ-rA-Aoc">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                                                     </imageView>
-                                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1C8-Hh-10y" userLabel="mailText">
+                                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mail..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1C8-Hh-10y" userLabel="mailText">
                                                                                         <rect key="frame" x="29" y="0.0" width="261" height="24"/>
                                                                                         <color key="tintColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                                                                                     </textField>
                                                                                 </subviews>
                                                                             </stackView>
@@ -103,12 +103,12 @@
                                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_lock" translatesAutoresizingMaskIntoConstraints="NO" id="uzj-pI-Acb">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
                                                                                     </imageView>
-                                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLq-0Y-Gis" userLabel="passText">
+                                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLq-0Y-Gis" userLabel="passText">
                                                                                         <rect key="frame" x="29" y="0.0" width="261" height="24"/>
                                                                                         <color key="tintColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                                                     </textField>
                                                                                 </subviews>
                                                                             </stackView>
