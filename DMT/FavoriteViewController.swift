@@ -13,6 +13,7 @@ class FavoriteViewController: UIViewController, UltraWeekCalendarDelegate {
     var calendar : UltraWeekCalendar? = nil
     
     @IBOutlet weak var showDateLabel: UILabel!
+    
     func dateButtonClicked() {
         let selectedDate = calendar?.selectedDate
         
