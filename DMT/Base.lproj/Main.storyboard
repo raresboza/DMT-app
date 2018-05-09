@@ -568,6 +568,9 @@
                         <viewLayoutGuide key="safeArea" id="cYO-IY-7PA"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="f5K-eQ-xwO"/>
+                    <connections>
+                        <outlet property="showDateLabel" destination="gnj-Ev-duK" id="Jol-mG-fLQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Rx-d7-adZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

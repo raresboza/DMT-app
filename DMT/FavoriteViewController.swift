@@ -8,11 +8,36 @@
 
 import UIKit
 
-class FavoriteViewController: UIViewController {
+class FavoriteViewController: UIViewController, UltraWeekCalendarDelegate {
+    
+    var calendar : UltraWeekCalendar? = nil
+    
+    @IBOutlet weak var showDateLabel: UILabel!
+    func dateButtonClicked() {
+        let selectedDate = calendar?.selectedDate
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let stringFromDate = formatter.string(from: selectedDate!)
+        let finalDate = formatter.date(from: stringFromDate)
+        formatter.dateFormat = "dd-MMM-yyyy"
+        let finalStringDate = formatter.string(from: finalDate!)
 
+        print("s-a apasat pe = \(String(describing: selectedDate))")
+        showDateLabel.text = finalStringDate
+
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        calendar = UltraWeekCalendar.init(frame: CGRect(x: 0, y: 30, width: UIScreen.main.bounds.width, height: 50))
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        let someDateTime = formatter.date(from: "2018/10/08")
+        
+        calendar?.delegate = self
+        calendar?.startDate = Date()
+        calendar?.endDate = someDateTime
+        self.view.addSubview(calendar!)
         // Do any additional setup after loading the view.
     }
 
