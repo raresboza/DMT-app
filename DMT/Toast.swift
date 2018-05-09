@@ -745,7 +745,7 @@ public class ToastManager {
     public var position: ToastPosition = .bottom
     
 }
-
+//
 // MARK: - ToastPosition
 
 public enum ToastPosition {

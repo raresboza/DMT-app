@@ -24,6 +24,7 @@ class JobListViewController: UIViewController, UICollectionViewDelegate, UIColle
     return month
         }else{
     return day
+           
         }
    
         
@@ -42,7 +43,7 @@ class JobListViewController: UIViewController, UICollectionViewDelegate, UIColle
         cell.dateImageView.image = imageArray[0]
         return cell
     }
-    
+    //
 
     override func viewDidLoad() {
         super.viewDidLoad()
