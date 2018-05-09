@@ -231,6 +231,7 @@
                         <outlet property="resultLabel" destination="qS8-ma-vms" id="9Fk-m9-bfI"/>
                         <outlet property="userScrollView" destination="WZM-oX-wiS" id="L6U-BO-8Oy"/>
                         <segue destination="Uz0-f7-veF" kind="presentation" identifier="toApp" id="PAs-rK-x49"/>
+                        <segue destination="Oj2-aG-2ii" kind="show" identifier="toTabApp" id="TtS-BW-W7e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -518,16 +519,81 @@
                     <view key="view" contentMode="scaleToFill" id="5Tx-RQ-URK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="1Zh-00-4pt"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T1O-PF-XwX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="770"/>
+            <point key="canvasLocation" x="-1088" y="788"/>
+        </scene>
+        <!--Jobs-->
+        <scene sceneID="QKW-VF-CAr">
+            <objects>
+                <viewController id="u28-9z-SKa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B44-HI-Wsx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.47058823529999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="lma-ZV-Oz0"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Jobs" image="BoxEmpty" id="FrD-ZW-9XI">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GdD-Wo-Vzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2783" y="-238"/>
+        </scene>
+        <!--Favorite View Controller-->
+        <scene sceneID="b63-GJ-b7e">
+            <objects>
+                <viewController id="qlo-ey-jrb" customClass="FavoriteViewController" customModule="DMT" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2Gj-ze-YCv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite View Controller here!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnj-Ev-duK">
+                                <rect key="frame" x="82" y="357" width="251" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gnj-Ev-duK" firstAttribute="centerY" secondItem="2Gj-ze-YCv" secondAttribute="centerY" id="8in-0I-mrC"/>
+                            <constraint firstItem="gnj-Ev-duK" firstAttribute="centerX" secondItem="2Gj-ze-YCv" secondAttribute="centerX" id="FMJ-LU-wtg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cYO-IY-7PA"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="f5K-eQ-xwO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Rx-d7-adZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2822" y="1231"/>
+        </scene>
+        <!--CustomUI Tab Controller-->
+        <scene sceneID="86a-YN-W2w">
+            <objects>
+                <tabBarController id="Oj2-aG-2ii" customClass="CustomUITabController" customModule="DMT" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4a6-P9-y8P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="qlo-ey-jrb" kind="relationship" relationship="viewControllers" id="hN2-6V-cxa"/>
+                        <segue destination="u28-9z-SKa" kind="relationship" relationship="viewControllers" id="yUh-TK-aJL"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jhh-80-ogV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1849" y="789"/>
         </scene>
     </scenes>
     <resources>
+        <image name="BoxEmpty" width="17" height="17"/>
         <image name="Lacat" width="14" height="17"/>
         <image name="Line" width="279" height="1"/>
         <image name="LoadingBG" width="414" height="736"/>
