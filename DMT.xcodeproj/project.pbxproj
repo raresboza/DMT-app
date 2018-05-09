@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		425ABB3D209F038500C3F8FD /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425ABB3C209F038500C3F8FD /* Toast.swift */; };
+		424953D020A3188300396E8D /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424953CF20A3188300396E8D /* Toast.swift */; };
+		4268FDD620A09EF4008F4809 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268FDD520A09EF4008F4809 /* CollectionViewCell.swift */; };
+		4268FDD820A0A005008F4809 /* JobListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268FDD720A0A005008F4809 /* JobListViewController.swift */; };
 		42FC3003209491DB00037E08 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC3002209491DB00037E08 /* UserRegister.swift */; };
 		42FC30052094940700037E08 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC30042094940700037E08 /* RegisterViewController.swift */; };
 		5A2ADD5E204BF2BF00602D83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2ADD5D204BF2BF00602D83 /* AppDelegate.swift */; };
@@ -42,7 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		425ABB3C209F038500C3F8FD /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = ../../../Desktop/Toast.swift; sourceTree = "<group>"; };
+		424953CF20A3188300396E8D /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		4268FDD520A09EF4008F4809 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		4268FDD720A0A005008F4809 /* JobListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListViewController.swift; sourceTree = "<group>"; };
 		42FC3002209491DB00037E08 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
 		42FC30042094940700037E08 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5A2ADD5A204BF2BF00602D83 /* DMT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,7 +119,9 @@
 			children = (
 				5A2ADD5F204BF2BF00602D83 /* LoginViewController.swift */,
 				42FC30042094940700037E08 /* RegisterViewController.swift */,
-				425ABB3C209F038500C3F8FD /* Toast.swift */,
+				4268FDD520A09EF4008F4809 /* CollectionViewCell.swift */,
+				4268FDD720A0A005008F4809 /* JobListViewController.swift */,
+				424953CF20A3188300396E8D /* Toast.swift */,
 				5A5CEF7A208F93330098B4E3 /* AlertManager.swift */,
 				5A5CEF78208F93290098B4E3 /* ServerRequestManager.swift */,
 				5A5CEF76208F92CD0098B4E3 /* ServerRequestHelper.swift */,
@@ -283,6 +289,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				424953D020A3188300396E8D /* Toast.swift in Sources */,
+				4268FDD820A0A005008F4809 /* JobListViewController.swift in Sources */,
 				42FC30052094940700037E08 /* RegisterViewController.swift in Sources */,
 				5A5CEF79208F93290098B4E3 /* ServerRequestManager.swift in Sources */,
 				42FC3003209491DB00037E08 /* UserRegister.swift in Sources */,
@@ -290,9 +298,9 @@
 				5A2ADD60204BF2BF00602D83 /* LoginViewController.swift in Sources */,
 				5A2ADD5E204BF2BF00602D83 /* AppDelegate.swift in Sources */,
 				5A2ADD8E204BFBCE00602D83 /* Constants.swift in Sources */,
-				425ABB3D209F038500C3F8FD /* Toast.swift in Sources */,
 				5A5CEF7B208F93330098B4E3 /* AlertManager.swift in Sources */,
 				5A5CEF77208F92CD0098B4E3 /* ServerRequestHelper.swift in Sources */,
+				4268FDD620A09EF4008F4809 /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
