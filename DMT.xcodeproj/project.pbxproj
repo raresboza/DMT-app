@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		424953D020A3188300396E8D /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424953CF20A3188300396E8D /* Toast.swift */; };
-		425DC78B20A8371F00DE2389 /* UltraWeekCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 425DC78A20A8371E00DE2389 /* UltraWeekCalendar.m */; };
 		42FC3003209491DB00037E08 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC3002209491DB00037E08 /* UserRegister.swift */; };
 		42FC30052094940700037E08 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC30042094940700037E08 /* RegisterViewController.swift */; };
 		5A2ADD5E204BF2BF00602D83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2ADD5D204BF2BF00602D83 /* AppDelegate.swift */; };
@@ -44,9 +43,6 @@
 
 /* Begin PBXFileReference section */
 		424953CF20A3188300396E8D /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
-		425DC78820A8371D00DE2389 /* DMT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DMT-Bridging-Header.h"; sourceTree = "<group>"; };
-		425DC78920A8371E00DE2389 /* UltraWeekCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UltraWeekCalendar.h; path = ../../UltraWeekCalendar/UltraWeekCalendar/Classes/UltraWeekCalendar.h; sourceTree = "<group>"; };
-		425DC78A20A8371E00DE2389 /* UltraWeekCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UltraWeekCalendar.m; path = ../../UltraWeekCalendar/UltraWeekCalendar/Classes/UltraWeekCalendar.m; sourceTree = "<group>"; };
 		42FC3002209491DB00037E08 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
 		42FC30042094940700037E08 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5A2ADD5A204BF2BF00602D83 /* DMT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,9 +113,6 @@
 		5A2ADD5C204BF2BF00602D83 /* DMT */ = {
 			isa = PBXGroup;
 			children = (
-				425DC78920A8371E00DE2389 /* UltraWeekCalendar.h */,
-				425DC78A20A8371E00DE2389 /* UltraWeekCalendar.m */,
-				425DC78820A8371D00DE2389 /* DMT-Bridging-Header.h */,
 				5A2ADD5F204BF2BF00602D83 /* LoginViewController.swift */,
 				42FC30042094940700037E08 /* RegisterViewController.swift */,
 				424953CF20A3188300396E8D /* Toast.swift */,
@@ -293,7 +286,6 @@
 			files = (
 				424953D020A3188300396E8D /* Toast.swift in Sources */,
 				42FC30052094940700037E08 /* RegisterViewController.swift in Sources */,
-				425DC78B20A8371F00DE2389 /* UltraWeekCalendar.m in Sources */,
 				5A5CEF79208F93290098B4E3 /* ServerRequestManager.swift in Sources */,
 				42FC3003209491DB00037E08 /* UserRegister.swift in Sources */,
 				5A2ADD8C204BF87200602D83 /* UIView w: Extension.swift in Sources */,
@@ -473,7 +465,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VFC8S3J559;
+				DEVELOPMENT_TEAM = 4857534772;
 				INFOPLIST_FILE = DMT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -492,7 +484,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VFC8S3J559;
+				DEVELOPMENT_TEAM = 4857534772;
 				INFOPLIST_FILE = DMT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
