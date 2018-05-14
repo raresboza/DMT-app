@@ -79,6 +79,9 @@
                                                                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                                                                                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <color key="onTintColor" red="0.46892541646957397" green="0.38143816590309143" blue="0.53749924898147583" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                        <connections>
+                                                                                            <action selector="rememberSwitchPressedWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="ltJ-AE-hcP"/>
+                                                                                        </connections>
                                                                                     </switch>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDm-eJ-bNt">
                                                                                         <rect key="frame" x="59" y="0.0" width="94" height="31"/>
@@ -236,6 +239,7 @@
                     <connections>
                         <outlet property="emailField" destination="1C8-Hh-10y" id="MuV-eR-Gld"/>
                         <outlet property="passwordField" destination="gLq-0Y-Gis" id="8e2-OR-YcQ"/>
+                        <outlet property="rememberSwitch" destination="RbJ-Yj-TWo" id="361-dq-dnM"/>
                         <outlet property="userScrollView" destination="WZM-oX-wiS" id="L6U-BO-8Oy"/>
                         <segue destination="Uz0-f7-veF" kind="presentation" identifier="toApp" id="PAs-rK-x49"/>
                     </connections>

@@ -15,6 +15,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var emailField: UITextField!
     
+    @IBOutlet weak var rememberSwitch: UISwitch!
     @IBOutlet weak var passwordField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +23,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(tapGesture)
         emailField.delegate = self
         passwordField.delegate = self
-        emailField.text = "schiesser@bacsez.ro"
-        passwordField.text = "directdirect"
+        if UserDefaults.standard.bool(forKey: "switchState") == true{
+            emailField.text = UserDefaults.standard.string(forKey: "savedEmail")
+            passwordField.text = UserDefaults.standard.string(forKey: "savedPassword")        }
+        
+        rememberSwitch.isOn = UserDefaults.standard.bool(forKey: "switchState")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -82,7 +86,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
+    @IBAction func rememberSwitchPressed(sender: UISwitch){
+        print("S-a salvat un nou switchState")
+       UserDefaults.standard.set(sender.isOn, forKey: "switchState")
+    }
     @IBAction func loginButton(_ sender: UIButton) {
         if (emailField.text?.isEmpty)! || passwordField.text?.isEmpty == true{
 //            resultLabel.text = ServerRequestConstants.resultErrors.emptyText
@@ -108,9 +115,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
             return
         }
-        resultLabel.text = ""
+        
         let mail = emailField.text
         let parola = passwordField.text
+        if UserDefaults.standard.bool(forKey: "switchState") == true {
+            UserDefaults.standard.set(emailField.text, forKey: "savedEmail")
+            UserDefaults.standard.set(passwordField.text, forKey: "savedPassword")
+            print("S-a salvat contul in userdef")
+        }
+       
         var params = Dictionary<String, String>();
     params["mail"] = mail
     params["parola"] = parola
