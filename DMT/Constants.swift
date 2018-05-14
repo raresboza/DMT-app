@@ -8,7 +8,11 @@
 
 import Foundation
 import UIKit
-
+struct UserDefaultsKeys {
+    static let rememberSwitchState = "switchState"
+    static let savedEmail = "savedEmail"
+    static let savedPassword = "passwordEmail"
+}
 struct Colors {
     
     static let myCyan = UIColor(red: (171/255.0), green: (245/255.0), blue: (255/255.0), alpha: 1.0)

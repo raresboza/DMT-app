@@ -23,11 +23,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(tapGesture)
         emailField.delegate = self
         passwordField.delegate = self
-        if UserDefaults.standard.bool(forKey: "switchState") == true{
-            emailField.text = UserDefaults.standard.string(forKey: "savedEmail")
-            passwordField.text = UserDefaults.standard.string(forKey: "savedPassword")        }
+        if UserDefaults.standard.bool(forKey: UserDefaultsKeys.rememberSwitchState) == true{
+            emailField.text = UserDefaults.standard.string(forKey: UserDefaultsKeys.savedEmail)
+            passwordField.text = UserDefaults.standard.string(forKey: UserDefaultsKeys.savedPassword)        }
         
-        rememberSwitch.isOn = UserDefaults.standard.bool(forKey: "switchState")
+        rememberSwitch.isOn = UserDefaults.standard.bool(forKey: UserDefaultsKeys.rememberSwitchState)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,7 +88,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     @IBAction func rememberSwitchPressed(sender: UISwitch){
         print("S-a salvat un nou switchState")
-       UserDefaults.standard.set(sender.isOn, forKey: "switchState")
+       UserDefaults.standard.set(sender.isOn, forKey: UserDefaultsKeys.rememberSwitchState)
     }
     @IBAction func loginButton(_ sender: UIButton) {
         if (emailField.text?.isEmpty)! || passwordField.text?.isEmpty == true{
@@ -118,9 +118,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         let mail = emailField.text
         let parola = passwordField.text
-        if UserDefaults.standard.bool(forKey: "switchState") == true {
-            UserDefaults.standard.set(emailField.text, forKey: "savedEmail")
-            UserDefaults.standard.set(passwordField.text, forKey: "savedPassword")
+        if UserDefaults.standard.bool(forKey: UserDefaultsKeys.rememberSwitchState) == true {
+            UserDefaults.standard.set(emailField.text, forKey: UserDefaultsKeys.savedEmail)
+            UserDefaults.standard.set(passwordField.text, forKey: UserDefaultsKeys.savedPassword)
             print("S-a salvat contul in userdef")
         }
        
