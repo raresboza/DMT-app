@@ -77,6 +77,18 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if emailField.isFirstResponder{
+            textField.resignFirstResponder()
+            passwordField.becomeFirstResponder()
+        }
+        if passwordField.isFirstResponder{
+            textField.resignFirstResponder()
+            nameField.becomeFirstResponder()
+        }
+        if nameField.isFirstResponder{
+            textField.resignFirstResponder()
+            phoneField.becomeFirstResponder()
+        }
         textField.resignFirstResponder()
         return true
     }

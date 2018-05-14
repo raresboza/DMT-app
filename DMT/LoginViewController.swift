@@ -22,6 +22,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.addGestureRecognizer(tapGesture)
         emailField.delegate = self
         passwordField.delegate = self
+        emailField.text = "schiesser@bacsez.ro"
+        passwordField.text = "directdirect"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,6 +73,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if emailField.isFirstResponder{
+        textField.resignFirstResponder()
+        passwordField.becomeFirstResponder()
+            return true
+        }
+        
         textField.resignFirstResponder()
         return true
     }
@@ -128,11 +136,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                                 DispatchQueue.main.async {
         
                                                     print("JSON = \(json!)")
-                                                  
+                                                 
+//                                                    do{
+//
+//                                                    let decoder = JSONDecoder()
+//                                                    let parseJson = try decoder.decode(UserRegister.self, from: json)}
+//                                                    catch { print(ServerRequestConstants.resultErrors.unknownError)}
+//
                                                    self.performSegue(withIdentifier: "toApp", sender: Any?.self)
+                                                
                                                     
 
-                                                }
+                                                    }
                                             }
                                         }
                                     } else {

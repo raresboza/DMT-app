@@ -100,7 +100,8 @@ class ServerRequestManager: NSObject {
 //                    let response: String = parseJSON[ServerRequestConstants.JSON.TAG_RESPONSE] as? String ?? ""
 //                    let message: String = parseJSON[ServerRequestConstants.JSON.TAG_MESSAGE] as? String ?? ""
         print(parseJSON)
-                    if (params["request"]?.isEqual(ServerRequestConstants.JSON.LOGIN_REQUEST_NUMBER))!{var stringResponse: String?
+                    if (params["request"]?.isEqual(ServerRequestConstants.JSON.LOGIN_REQUEST_NUMBER))!{
+                        let stringResponse = "In the works"
                    guard let msgValue = json?.value(forKey: ServerRequestConstants.JSON.TAG_MESSAGE) as! String? else{
                     return
                         }
@@ -111,11 +112,14 @@ class ServerRequestManager: NSObject {
                     }
                     print ("msg value este: '\(msgValue)'")
                     print ("response value este: '\(responseValue)'")
-                            stringResponse = self.createStringFromDictionary(dict: responseValue as! Dictionary<NSString, NSString>)} else {
-                            stringResponse = json?.value(forKey:ServerRequestConstants.JSON.TAG_RESPONSE) as? String
+//                            stringResponse = self.createStringFromDictionary(dict: responseValue as! Dictionary<NSString, NSString>)
+                            
                         }
+//                        else {
+//                            stringResponse = json?.value(forKey:ServerRequestConstants.JSON.TAG_RESPONSE) as? String
+//                        }
                         print("response in string este:'\(String(describing: stringResponse))'")
-                    postCompleted(stringResponse!, msgValue, parseJSON)
+                            postCompleted(stringResponse, msgValue, parseJSON)
                     }
                     if (params["request"]?.isEqual(ServerRequestConstants.JSON.REGISTER_REQUEST_NUMBER))!{
                         guard let msgValue = json?.value(forKey: ServerRequestConstants.JSON.TAG_MESSAGE) as! String? else{
