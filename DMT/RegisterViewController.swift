@@ -21,14 +21,34 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
     override func viewDidLoad() {
         super.viewDidLoad()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
+        let tapImage = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         view.addGestureRecognizer(tapGesture)
+        profileImageView.addGestureRecognizer(tapImage)
+        profileImageView.isUserInteractionEnabled = true
+        
      emailField.delegate = self
      passwordField.delegate = self
      nameField.delegate = self
      phoneField.delegate = self
-     imagePicker.delegate = self
      
     }
+    @objc func imageTapped(sender: UIImageView){
+        print("ImageView Tapped!")
+        let controller = UIImagePickerController()
+            controller.delegate = self
+            controller.sourceType = .photoLibrary
+            present(controller, animated: true, completion: nil)
+      
+    }
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        profileImageView.image = image
+        dismiss(animated: true, completion: nil)
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         let showKeyboard: (Notification) -> Void = { notification in
