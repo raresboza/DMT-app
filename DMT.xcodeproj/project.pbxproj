@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C7904E920B59E6B008E0EB3 /* UltraWeekCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7904E820B59E6B008E0EB3 /* UltraWeekCalendar.m */; };
 		424953D020A3188300396E8D /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424953CF20A3188300396E8D /* Toast.swift */; };
-		426F0F7320B16E3D0088E70A /* UltraWeekCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 426F0F7120B16E3D0088E70A /* UltraWeekCalendar.m */; };
 		426F0F7520B16F290088E70A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F0F7420B16F290088E70A /* HomeViewController.swift */; };
 		42FC3003209491DB00037E08 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC3002209491DB00037E08 /* UserRegister.swift */; };
 		42FC30052094940700037E08 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC30042094940700037E08 /* RegisterViewController.swift */; };
@@ -44,10 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C7904E720B59E6B008E0EB3 /* UltraWeekCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UltraWeekCalendar.h; path = "../../../../Documents/DMT-app/DMT/UltraWeekCalendar.h"; sourceTree = "<group>"; };
+		3C7904E820B59E6B008E0EB3 /* UltraWeekCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UltraWeekCalendar.m; path = "../../../../Documents/DMT-app/DMT/UltraWeekCalendar.m"; sourceTree = "<group>"; };
 		424953CF20A3188300396E8D /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		426F0F7020B16E3C0088E70A /* DMT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DMT-Bridging-Header.h"; sourceTree = "<group>"; };
-		426F0F7120B16E3D0088E70A /* UltraWeekCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UltraWeekCalendar.m; path = ../../../../Desktop/UltraWeekCalendar.m; sourceTree = "<group>"; };
-		426F0F7220B16E3D0088E70A /* UltraWeekCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UltraWeekCalendar.h; path = ../../../../Desktop/UltraWeekCalendar.h; sourceTree = "<group>"; };
 		426F0F7420B16F290088E70A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		42FC3002209491DB00037E08 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
 		42FC30042094940700037E08 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -99,8 +99,8 @@
 		426F0F6F20B16E270088E70A /* UIUltraCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				426F0F7220B16E3D0088E70A /* UltraWeekCalendar.h */,
-				426F0F7120B16E3D0088E70A /* UltraWeekCalendar.m */,
+				3C7904E720B59E6B008E0EB3 /* UltraWeekCalendar.h */,
+				3C7904E820B59E6B008E0EB3 /* UltraWeekCalendar.m */,
 				426F0F7020B16E3C0088E70A /* DMT-Bridging-Header.h */,
 			);
 			path = UIUltraCalendar;
@@ -302,9 +302,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				426F0F7320B16E3D0088E70A /* UltraWeekCalendar.m in Sources */,
 				424953D020A3188300396E8D /* Toast.swift in Sources */,
 				42FC30052094940700037E08 /* RegisterViewController.swift in Sources */,
+				3C7904E920B59E6B008E0EB3 /* UltraWeekCalendar.m in Sources */,
 				5A5CEF79208F93290098B4E3 /* ServerRequestManager.swift in Sources */,
 				42FC3003209491DB00037E08 /* UserRegister.swift in Sources */,
 				5A2ADD8C204BF87200602D83 /* UIView w: Extension.swift in Sources */,
@@ -485,7 +485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4857534772;
+				DEVELOPMENT_TEAM = VFC8S3J559;
 				INFOPLIST_FILE = DMT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -504,7 +504,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4857534772;
+				DEVELOPMENT_TEAM = VFC8S3J559;
 				INFOPLIST_FILE = DMT/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
