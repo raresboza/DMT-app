@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C7904E920B59E6B008E0EB3 /* UltraWeekCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C7904E820B59E6B008E0EB3 /* UltraWeekCalendar.m */; };
+		3C7904EB20B5A479008E0EB3 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7904EA20B5A479008E0EB3 /* CollectionViewCell.swift */; };
 		424953D020A3188300396E8D /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424953CF20A3188300396E8D /* Toast.swift */; };
 		426F0F7520B16F290088E70A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F0F7420B16F290088E70A /* HomeViewController.swift */; };
 		42FC3003209491DB00037E08 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC3002209491DB00037E08 /* UserRegister.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		3C7904E720B59E6B008E0EB3 /* UltraWeekCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UltraWeekCalendar.h; path = "../../../../Documents/DMT-app/DMT/UltraWeekCalendar.h"; sourceTree = "<group>"; };
 		3C7904E820B59E6B008E0EB3 /* UltraWeekCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UltraWeekCalendar.m; path = "../../../../Documents/DMT-app/DMT/UltraWeekCalendar.m"; sourceTree = "<group>"; };
+		3C7904EA20B5A479008E0EB3 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CollectionViewCell.swift; path = DMT/CollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		424953CF20A3188300396E8D /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		426F0F7020B16E3C0088E70A /* DMT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DMT-Bridging-Header.h"; sourceTree = "<group>"; };
 		426F0F7420B16F290088E70A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				426F0F6F20B16E270088E70A /* UIUltraCalendar */,
 				5A2ADD5F204BF2BF00602D83 /* LoginViewController.swift */,
 				42FC30042094940700037E08 /* RegisterViewController.swift */,
+				3C7904EA20B5A479008E0EB3 /* CollectionViewCell.swift */,
 				426F0F7420B16F290088E70A /* HomeViewController.swift */,
 				424953CF20A3188300396E8D /* Toast.swift */,
 				5A5CEF7A208F93330098B4E3 /* AlertManager.swift */,
@@ -310,6 +313,7 @@
 				5A2ADD8C204BF87200602D83 /* UIView w: Extension.swift in Sources */,
 				5A2ADD60204BF2BF00602D83 /* LoginViewController.swift in Sources */,
 				5A2ADD5E204BF2BF00602D83 /* AppDelegate.swift in Sources */,
+				3C7904EB20B5A479008E0EB3 /* CollectionViewCell.swift in Sources */,
 				5A2ADD8E204BFBCE00602D83 /* Constants.swift in Sources */,
 				5A5CEF7B208F93330098B4E3 /* AlertManager.swift in Sources */,
 				5A5CEF77208F92CD0098B4E3 /* ServerRequestHelper.swift in Sources */,

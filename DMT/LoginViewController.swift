@@ -15,8 +15,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var emailField: UITextField!
     
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var rememberSwitch: UISwitch!
     @IBOutlet weak var passwordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
@@ -26,7 +28,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if UserDefaults.standard.bool(forKey: UserDefaultsKeys.rememberSwitchState) == true{
             emailField.text = UserDefaults.standard.string(forKey: UserDefaultsKeys.savedEmail)
             passwordField.text = UserDefaults.standard.string(forKey: UserDefaultsKeys.savedPassword)        }
-        
         rememberSwitch.isOn = UserDefaults.standard.bool(forKey: UserDefaultsKeys.rememberSwitchState)
     }
     
@@ -89,8 +90,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func rememberSwitchPressed(sender: UISwitch){
         print("S-a salvat un nou switchState")
        UserDefaults.standard.set(sender.isOn, forKey: UserDefaultsKeys.rememberSwitchState)
+        if sender.isOn == false{
+            print("Am sters user defaults")
+            UserDefaults.standard.set(emailField.text, forKey: UserDefaultsKeys.noEmail)
+            UserDefaults.standard.set(passwordField.text, forKey: UserDefaultsKeys.noPassword)
+        } else {
+            UserDefaults.standard.set(emailField.text, forKey: UserDefaultsKeys.savedEmail)
+            UserDefaults.standard.set(passwordField.text, forKey: UserDefaultsKeys.savedPassword)
+            print("Am salvat in user defaults")
+        }
     }
     @IBAction func loginButton(_ sender: UIButton) {
+        self.loginButton.isEnabled = false
         if (emailField.text?.isEmpty)! || passwordField.text?.isEmpty == true{
 //            resultLabel.text = ServerRequestConstants.resultErrors.emptyText
 //            resultLabel.textColor = UIColor.white
@@ -134,6 +145,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                         if(msg == ServerRequestConstants.JSON.RESPONSE_ERROR) {
                                             DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
                                                 DispatchQueue.main.async {
+                                                    self.loginButton.isEnabled = true
                                                     self.view.makeToast(response, duration: 3.0, position:.bottom, title: "Error") { didTap in
                                                         if didTap {
                                                             print("completion from tap")
@@ -147,15 +159,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                         } else if(msg == ServerRequestConstants.JSON.RESPONSE_SUCCESS) {
                                             DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
                                                 DispatchQueue.main.async {
-        
+                                                    
                                                     print("JSON = \(json!)")
                                                  
-//                                                    do{
-//
-//                                                    let decoder = JSONDecoder()
-//                                                    let parseJson = try decoder.decode(UserRegister.self, from: json)}
-//                                                    catch { print(ServerRequestConstants.resultErrors.unknownError)}
-//
+
+
                                                    self.performSegue(withIdentifier: "toApp", sender: Any?.self)
                                                 
                                                     
@@ -164,6 +172,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                             }
                                         }
                                     } else {
+                                        self.loginButton.isEnabled = true
                                         AlertManager.showGenericDialog(ServerRequestConstants.resultErrors.unknownError, viewController: self)
                         
                                     }

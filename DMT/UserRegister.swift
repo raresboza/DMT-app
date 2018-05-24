@@ -15,6 +15,8 @@ struct UserRegister: Codable{
     let telefon: String
     let tipUser: String
     let idUser: Int
+    let avatar: String
+    let status: Int
     //
     private enum CodingKeys: String, CodingKey{
         case nume
@@ -24,5 +26,7 @@ struct UserRegister: Codable{
         case telefon = "nr_telefon"
         case tipUser = "tip_user"
         case idUser = "id_user"
+        case avatar
+        case status
     }
 }

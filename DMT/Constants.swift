@@ -12,6 +12,8 @@ struct UserDefaultsKeys {
     static let rememberSwitchState = "switchState"
     static let savedEmail = "savedEmail"
     static let savedPassword = "passwordEmail"
+    static let noEmail = ""
+    static let noPassword = ""
 }
 struct Colors {
     

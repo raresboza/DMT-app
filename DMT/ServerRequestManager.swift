@@ -47,7 +47,7 @@ class ServerRequestManager: NSObject {
     static let instance = ServerRequestManager()
     
     
-    func postRequest(params : Dictionary<NSString, NSString>,  url : String, postCompleted: @escaping (_ response: String, _ msg: String, _ json: NSDictionary?) -> ()) {
+    func postRequest(params : Dictionary<NSString, NSString>,  url : String, postCompleted: @escaping (_ response: String, _ msg: String, _ json: UserRegister?) -> ()) {
        
         let paramsStr = createStringFromDictionary(dict: params)
         let paramsLength = "\(paramsStr.count)"
@@ -71,12 +71,18 @@ class ServerRequestManager: NSObject {
             print("response = \(String(describing: response))")
             print("error = \(String(describing: error))\n")
 
-            let json: NSDictionary?
+            let json: UserRegister?
             
             do {
                 if(data != nil) {
                     print("data != nil")
-                    json = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as? NSDictionary
+//                    json = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as? NSDictionary
+                    do{
+                        
+                        let decoder = JSONDecoder()
+                        json = try decoder.decode(UserRegister.self, from: data!)}
+                    catch { print(ServerRequestConstants.resultErrors.unknownError)}
+                    
                 } else {
                     print("data == nil")
                     postCompleted(ServerRequestConstants.JSON.RESPONSE_ERROR, "An error has occured. Please try again later.", nil)
@@ -102,6 +108,7 @@ class ServerRequestManager: NSObject {
         print(parseJSON)
                     if (params["request"]?.isEqual(ServerRequestConstants.JSON.LOGIN_REQUEST_NUMBER))!{
                         let stringResponse = "In the works"
+                        // TO-DO: prelucrarea proprietatii "json"
                    guard let msgValue = json?.value(forKey: ServerRequestConstants.JSON.TAG_MESSAGE) as! String? else{
                     return
                         }
@@ -122,6 +129,7 @@ class ServerRequestManager: NSObject {
                             postCompleted(stringResponse, msgValue, parseJSON)
                     }
                     if (params["request"]?.isEqual(ServerRequestConstants.JSON.REGISTER_REQUEST_NUMBER))!{
+                        //TO-DO: prelucrarea proprietatii "json"
                         guard let msgValue = json?.value(forKey: ServerRequestConstants.JSON.TAG_MESSAGE) as! String? else{
                             return
                         }
