@@ -19,6 +19,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var rememberSwitch: UISwitch!
     @IBOutlet weak var passwordField: UITextField!
     
+    var userDetailsFromServer: NSDictionary? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
@@ -160,13 +162,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                             DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
                                                 DispatchQueue.main.async {
                                                     
-                                                    print("JSON = \(json!)")
-                                                 
-
-
-                                                   self.performSegue(withIdentifier: "toApp", sender: Any?.self)
-                                                
-                                                    
+                                                    // inainte de a face segue vom transfera obiectul json catre HomeVC
+                                                    self.userDetailsFromServer = json
+                                                    self.performSegue(withIdentifier: "toApp", sender: Any?.self)
 
                                                     }
                                             }
@@ -181,6 +179,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 })
             
             }
+    // prepare(for:sender:) se apeleaza inainte de apelul performSegue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toApp" {
+            if let vc = segue.destination as? HomeViewController {
+                vc.userDetails = userDetailsFromServer
+            }
+        }
+    }
+    
         }
         
 

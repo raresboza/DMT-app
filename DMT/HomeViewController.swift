@@ -11,6 +11,8 @@ import UIKit
 class HomeViewController: UIViewController, UltraWeekCalendarDelegate, UICollectionViewDelegate, UICollectionViewDataSource
 
 {
+    var userDetails: NSDictionary? // aceasta instanta este creata atunci cand se va face tranzitia din LoginVC in HomeVC
+    
     let reuseIdentifier = "cell"
     var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
     
@@ -43,6 +45,7 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate, UICollect
     var calendar : UltraWeekCalendar? = nil
         
     override func viewDidLoad() {
+        print("HomeViewController - viewDidLoad")
         super.viewDidLoad()
         calendar = UltraWeekCalendar.init(frame: CGRect(x: 0, y: Constraints.topBarHeight, width: UIScreen.main.bounds.width, height: 60))
         let formatter = DateFormatter()
@@ -56,13 +59,18 @@ class HomeViewController: UIViewController, UltraWeekCalendarDelegate, UICollect
         
     
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("HomeViewController - viewWillAppear")
+        if let userDetails = userDetails {
+            print("HomeViewController - user details: \(userDetails) ")
+        }
+        
+    }
     func dateButtonClicked() {
         
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    
-    }
+
     
 
    
