@@ -73,26 +73,22 @@ class ServerRequestManager: NSObject {
 
             let json: UserRegister?
             
-            do {
-                if(data != nil) {
-                    print("data != nil")
+            if(data != nil) {
+                print("data != nil")
 //                    json = try JSONSerialization.jsonObject(with: data!, options: .mutableLeaves) as? NSDictionary
-                    do{
-                        
-                        let decoder = JSONDecoder()
-                        json = try decoder.decode(UserRegister.self, from: data!)}
-                    catch { print(ServerRequestConstants.resultErrors.unknownError)}
+                do{
                     
-                } else {
-                    print("data == nil")
-                    postCompleted(ServerRequestConstants.JSON.RESPONSE_ERROR, "An error has occured. Please try again later.", nil)
-                    json = nil
-                    return
-                }
-            } catch _ {
-                print("suntem in catch!")
+                    let decoder = JSONDecoder()
+                    json = try decoder.decode(UserRegister.self, from: data!)}
+                catch { print(ServerRequestConstants.resultErrors.unknownError)}
+                
+            } else {
+                print("data == nil")
+                postCompleted(ServerRequestConstants.JSON.RESPONSE_ERROR, "An error has occured. Please try again later.", nil)
                 json = nil
+                return
             }
+
             
             if(json == nil) {
                 if let jsonStr = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) {
