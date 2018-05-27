@@ -165,7 +165,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                                     // inainte de a face segue vom transfera obiectul json catre HomeVC
                                                     self.userDetailsFromServer = json
                                                     self.performSegue(withIdentifier: "toApp", sender: Any?.self)
-
+                                                        
                                                     }
                                             }
                                         }
@@ -184,8 +184,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "toApp" {
             if let vc = segue.destination as? HomeViewController {
                 vc.userDetails = userDetailsFromServer
+            
             }
         }
+    }
+    func getImageFromBase64(base64:String) -> UIImage {
+        let data = Data(base64Encoded: base64)
+        return UIImage(data: data!)!
     }
     
         }

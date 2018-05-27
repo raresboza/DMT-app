@@ -25,6 +25,8 @@ struct Colors {
     static let bgWhite = UIColor(red: (255/255.0), green: (255/255.0), blue: (255/255.0), alpha: 0.4)
 }
 
+
+
 struct Constraints{
     
     static let topBarHeight = UIApplication.shared.statusBarFrame.size.height + 44.0

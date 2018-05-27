@@ -46,6 +46,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         profileImageView.image = image
+        let imageStr = convertImageTobase64(format: .png, image: profileImageView.image!)
+        
         dismiss(animated: true, completion: nil)
     }
 
@@ -198,6 +200,20 @@ class RegisterViewController: UIViewController, UITextFieldDelegate, UIImagePick
         })
         
         
+    }
+    
+    public enum ImageFormat {
+        case png
+        case jpeg(CGFloat)
+    }
+    
+    func convertImageTobase64(format: ImageFormat, image:UIImage) -> String? {
+        var imageData: Data?
+        switch format {
+        case .png: imageData = UIImagePNGRepresentation(image)
+        case .jpeg(let compression): imageData = UIImageJPEGRepresentation(image, compression)
+        }
+        return imageData?.base64EncodedString()
     }
 }
 extension String {
