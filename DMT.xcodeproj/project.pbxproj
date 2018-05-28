@@ -11,6 +11,7 @@
 		3C8A657C20B692E20099B204 /* UltraWeekCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8A657B20B692E20099B204 /* UltraWeekCalendar.m */; };
 		424953D020A3188300396E8D /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424953CF20A3188300396E8D /* Toast.swift */; };
 		426F0F7520B16F290088E70A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426F0F7420B16F290088E70A /* HomeViewController.swift */; };
+		42F74F9A20BC2D5E00DE8F07 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F74F9920BC2D5E00DE8F07 /* ForgotPasswordViewController.swift */; };
 		42FC3003209491DB00037E08 /* UserRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC3002209491DB00037E08 /* UserRegister.swift */; };
 		42FC30052094940700037E08 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FC30042094940700037E08 /* RegisterViewController.swift */; };
 		5A2ADD5E204BF2BF00602D83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2ADD5D204BF2BF00602D83 /* AppDelegate.swift */; };
@@ -51,6 +52,7 @@
 		424953CF20A3188300396E8D /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		426F0F7020B16E3C0088E70A /* DMT-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "DMT-Bridging-Header.h"; path = "UIUltraCalendar/DMT-Bridging-Header.h"; sourceTree = "<group>"; };
 		426F0F7420B16F290088E70A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		42F74F9920BC2D5E00DE8F07 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		42FC3002209491DB00037E08 /* UserRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegister.swift; sourceTree = "<group>"; };
 		42FC30042094940700037E08 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		5A2ADD5A204BF2BF00602D83 /* DMT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 		5A2ADD5C204BF2BF00602D83 /* DMT */ = {
 			isa = PBXGroup;
 			children = (
+				42F74F9920BC2D5E00DE8F07 /* ForgotPasswordViewController.swift */,
 				3C8A657A20B692B10099B204 /* UltraWeekCalendar.h */,
 				3C8A657B20B692E20099B204 /* UltraWeekCalendar.m */,
 				426F0F7020B16E3C0088E70A /* DMT-Bridging-Header.h */,
@@ -305,6 +308,7 @@
 				5A2ADD8C204BF87200602D83 /* UIView w: Extension.swift in Sources */,
 				5A2ADD60204BF2BF00602D83 /* LoginViewController.swift in Sources */,
 				5A2ADD5E204BF2BF00602D83 /* AppDelegate.swift in Sources */,
+				42F74F9A20BC2D5E00DE8F07 /* ForgotPasswordViewController.swift in Sources */,
 				3C7904EB20B5A479008E0EB3 /* CollectionViewCell.swift in Sources */,
 				5A2ADD8E204BFBCE00602D83 /* Constants.swift in Sources */,
 				5A5CEF7B208F93330098B4E3 /* AlertManager.swift in Sources */,

@@ -105,8 +105,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func loginButton(_ sender: UIButton) {
         self.loginButton.isEnabled = false
         if (emailField.text?.isEmpty)! || passwordField.text?.isEmpty == true{
-//            resultLabel.text = ServerRequestConstants.resultErrors.emptyText
-//            resultLabel.textColor = UIColor.white
             self.view.makeToast(ServerRequestConstants.resultErrors.emptyText, duration: 3.0, position:.bottom, title: "Error") { didTap in
                 if didTap {
                     print("completion from tap")
@@ -117,8 +115,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return
         }
         if (emailField.text?.contains("@"))! == false && emailField.text?.contains(".") == false{
-//            resultLabel.text = ServerRequestConstants.resultErrors.invalidEmail
-//            resultLabel.textColor = UIColor.white
             self.view.makeToast(ServerRequestConstants.resultErrors.invalidEmail, duration: 3.0, position:.bottom, title: "Error") { didTap in
                 if didTap {
                     print("completion from tap")
@@ -192,6 +188,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let data = Data(base64Encoded: base64)
         return UIImage(data: data!)!
     }
+   
     
         }
         
