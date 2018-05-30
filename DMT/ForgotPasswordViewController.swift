@@ -30,6 +30,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     @IBAction func changePasswordButton(_ sender: Any) {
+        emailTextField.resignFirstResponder()
         if (emailTextField.text?.isEmpty)! {
             self.view.makeToast(ServerRequestConstants.resultErrors.emptyText, duration: 3.0, position:.bottom, title: "Error") { didTap in
                 if didTap {
@@ -41,7 +42,7 @@ class ForgotPasswordViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        if (emailTextField.text?.contains("@"))! == false && emailTextField.text?.contains(".") == false{
+        if (emailTextField.text?.contains("@"))! == false || emailTextField.text?.contains(".") == false{
             self.view.makeToast(ServerRequestConstants.resultErrors.invalidEmail, duration: 3.0, position:.bottom, title: "Error") { didTap in
                 if didTap {
                     print("completion from tap")

@@ -133,7 +133,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             print("S-a salvat contul in userdef")
         }
        
-        var params = Dictionary<String, String>();
+    var params = Dictionary<String, String>()
     params["mail"] = mail
     params["parola"] = parola
     params["request"] = ServerRequestConstants.JSON.LOGIN_REQUEST_NUMBER
